@@ -80,6 +80,9 @@ color: ${(props)=>  props.theme["gray-500"]};
 
 export const TaskInput= styled(Baseinput)`
 flex:1;
+&::-webkit-calendar-picker-indicator{
+    display: none !important;
+}
 
 `;
 
