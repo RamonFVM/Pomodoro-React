@@ -16,6 +16,7 @@ interface CyclesContetexType {
     setSecondsPassed: (seconds: number) => void
     interruptCurrentCycle: () => void
     createNewCycle: (data: CreateCycleData) => void
+    cycles:Cycle[]
 }
 interface Cycle {
     id: string
@@ -108,7 +109,8 @@ export function CyclesContextProvider({children}: CycleContextProviderProps) {
             amountSecondsPassed,
             setSecondsPassed,
             createNewCycle,
-            interruptCurrentCycle
+            interruptCurrentCycle,
+            cycles
         }}>
 
 
