@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useReducer, useState } from "react";
-import { Cycle, cyclesReducer, } from "../reducers/cycles";
+import { Cycle, cyclesReducer, } from "../reducers/reducer";
 import { addNewCycleAction, interruptCurrentCycleAction, markCurrentCycleasFinishedAction } from "../reducers/actions";
 
 
@@ -39,6 +39,7 @@ export function CyclesContextProvider({ children }: CycleContextProviderProps) {
     const { cycles, activeCycleId } = cyclesState;
     const [amountSecondsPassed, setAmountSecondsPassed] = useState(0);
     const activeCycle = cycles.find(cycle => cycle.id === activeCycleId);
+
 
     function setSecondsPassed(seconds: number) {
         setAmountSecondsPassed(seconds);
